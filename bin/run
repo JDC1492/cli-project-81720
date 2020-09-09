@@ -14,16 +14,19 @@ tref_array = tref_hash[:data]
 plant_id = tref_array.collect do |plant|
     Plants.new(plant)
 end
+ 
+URL='https://trefle.io/'
+token = '?token=7jharOHxyyJNNnPiuAkMe0EvzCR_F7MQkHt0S-1__LM'
 
 plant_id.each do |pi|
-    resp = RestClient.get(pi.link)
     binding.pry
+    resp = RestClient.get(URL + pi.link + token)
 end
 
-
-
+# URL = 'https://trefle.io'
+# ext = pi.link
+# ext = [:links][:self]
 
 
 # CLI.new.greet
 
-# treffle token: 7jharOHxyyJNNnPiuAkMe0EvzCR_F7MQkHt0S-1__LM
