@@ -8,13 +8,12 @@ require_relative '../lib/plant'
 
 
 resp = RestClient.get('https://trefle.io/api/v1/plants?token=7jharOHxyyJNNnPiuAkMe0EvzCR_F7MQkHt0S-1__LM')
-tref_hash=JSON.parse(resp.body, symbolize_names:true)
-tref_array=tref_hash[:data]
+tref_hash = JSON.parse(resp.body, symbolize_names:true)
+tref_array = tref_hash[:data]
 
 plant_id = tref_array.collect do |name|
     binding.pry
     Plant.new(name)
-    
 end
 
 
