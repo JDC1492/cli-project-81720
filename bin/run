@@ -23,11 +23,11 @@ plant_id.each do |pi|
     resp = RestClient.get(URL + pi.link + token)
     id_hash = JSON.parse(resp.body, symbolize_names:true)
     binding.pry
-    pi.common_name = pi.[:common_name]
-    pi.scientific_name = pi.[:scientific_name]
-    pi.family = pi.[:family]
-    pi.duration = pi.[:duration]
-    pi.edile = pi.[:edile]
+    pi.common_name = pi[:common_name]
+    pi.scientific_name = pi[:scientific_name]
+    pi.family = pi[:family]
+    pi.duration = pi[:duration]
+    pi.edile = pi[:edile]
 end
 
 
