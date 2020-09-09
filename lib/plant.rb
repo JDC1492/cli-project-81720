@@ -1,10 +1,12 @@
-class Plant
+class Plants
 
     @@all=[]
-    attr_accessor :common_name
+    attr_accessor :name, :link
 
-    def initialize(name)
-        self.new = name[:common_name]
+    def initialize(plant)
+        self.name = plant[:common_name]
+        self.link = plant[:links][:self]
+        @@all<<self
     end
 
     def self.all

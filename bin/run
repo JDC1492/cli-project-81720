@@ -11,9 +11,13 @@ resp = RestClient.get('https://trefle.io/api/v1/plants?token=7jharOHxyyJNNnPiuAk
 tref_hash = JSON.parse(resp.body, symbolize_names:true)
 tref_array = tref_hash[:data]
 
-plant_id = tref_array.collect do |name|
+plant_id = tref_array.collect do |plant|
+    Plants.new(plant)
+end
+
+plant_id.each do |pi|
+    resp = RestClient.get(pi.link)
     binding.pry
-    Plant.new(name)
 end
 
 
