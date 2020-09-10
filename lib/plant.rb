@@ -1,7 +1,8 @@
 class Plants
 
     @@all=[]
-    attr_accessor :name, :link, :scientific_name, :family, :duration, :edile
+
+    attr_accessor :name, :link, :scientific_name, :genus, :observations, :family, :edible
 
     def initialize(plant)
         self.name = plant[:common_name]
@@ -11,10 +12,7 @@ class Plants
 
     def self.all
         @@all
-    end
-
-
-    
+    end 
 end
 
 
