@@ -7,6 +7,7 @@ class CLI
         API.scrape_listings
         list_plants
         input
+        
     end
 
     def list_plants
@@ -26,7 +27,12 @@ class CLI
             input
         else
             plant = Plants.all[input.to_i-1]
+            display_plant_info(plant)
         end
-
     end
+
+    def display_plant_info(plant)
+        API.scrape_indi_plants(plant)
+    end
+
 end
