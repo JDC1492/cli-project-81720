@@ -1,9 +1,12 @@
 class CLI
     def greet
+        #greet the user
         puts "Welcome to the Greenhouse!"
         puts "What plant information are you looking for?"
+        #pulls the listings from the API class method.
         API.scrape_listings
         list_plants
+        input
     end
 
     def list_plants
@@ -11,5 +14,18 @@ class CLI
             puts "#{i}. #{plant.name.upcase}"
             sleep(0.5)
         end
+    end
+
+    def input
+        puts "Select a number for more information on that particular plant/tree. "
+        input = gets.chomp
+        #input needs to be in range of the options available, between 1-20.
+        if !input.to_i.between?(1, Plants.all.count)
+            puts "Option not availible. Please try another selection."
+            list_plants
+            menu
+
+        end
+
     end
 end
