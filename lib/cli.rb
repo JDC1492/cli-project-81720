@@ -12,7 +12,7 @@ class CLI
     def list_plants
         Plants.all.each.with_index(1) do |plant, i|
             puts "#{i}. #{plant.name.upcase}"
-            sleep(0.5)
+            sleep(0.1)
         end
     end
 
@@ -23,8 +23,9 @@ class CLI
         if !input.to_i.between?(1, Plants.all.count)
             puts "Option not availible. Please try another selection."
             list_plants
-            menu
-
+            input
+        else
+            plant = Plants.all[input.to_i-1]
         end
 
     end
