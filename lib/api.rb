@@ -1,5 +1,8 @@
 require 'pry'
 class API 
+    #constant being set with the APIs url.
+     URL='https://trefle.io/'
+
 def self.scrape_listings
    
     resp = RestClient.get('https://trefle.io/api/v1/plants?token=7jharOHxyyJNNnPiuAkMe0EvzCR_F7MQkHt0S-1__LM') 
@@ -15,7 +18,7 @@ end
 
 def self.scrape_indi_plants(plant_option)
     # 
-    URL='https://trefle.io/'
+   
     token = '?token=7jharOHxyyJNNnPiuAkMe0EvzCR_F7MQkHt0S-1__LM'
 
     plant_id.each do |p_id| 

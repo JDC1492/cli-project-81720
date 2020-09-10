@@ -9,4 +9,4 @@ require_relative '../lib/plant'
 
 
 
-# CLI.new.greet
+CLI.new.greet
