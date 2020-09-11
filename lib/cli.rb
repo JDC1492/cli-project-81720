@@ -62,8 +62,11 @@ class CLI
             puts ""
             sleep(1)
             exit
+        else
+            puts "Is seems you've stumbled into a field of weeds..."
+            puts "Please make another selection." 
+            option
         end
-
     end
 
     def display_plant_info(plant)

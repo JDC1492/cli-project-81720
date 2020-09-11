@@ -10,6 +10,7 @@ def self.scrape_listings
     tref_array = tref_hash[:data]
         #[:data] the beginning of the information that I want to pull and use.
     plant_id = tref_array.collect do |plant|
+    
         Plants.new(plant) 
         #NewInstancesFromPlantClass.  
     end
